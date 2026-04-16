@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Tour Patio</title>
+<link rel="stylesheet" href="pannellum.css"/>
+<script src="pannellum.js"></script>
+<style>
+#panorama {
+    width: 100%;
+    height: 600px;
+}
+</style>
+</head>
+<body>
+
+<div id="panorama"></div>
+
+<script>
+pannellum.viewer('panorama', {
+    "default": {
+        "firstScene": "patio1",
+        "sceneFadeDuration": 1000
+    },
+
+    "scenes": {
+
+        "patio1": {
+            "title": "Zona Norte",
+            "type": "equirectangular",
+            "panorama": "assets/patio1.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": 90,
+                    "type": "scene",
+                    "text": "Ir a Zona Sur",
+                    "sceneId": "patio2"
+                }
+            ]
+        },
+
+        "patio2": {
+            "title": "Zona Sur",
+            "type": "equirectangular",
+            "panorama": "assets/patio2.jpg",
+            "hotSpots": [
+                {
+                    "pitch": 0,
+                    "yaw": -90,
+                    "type": "scene",
+                    "text": "Volver a Zona Norte",
+                    "sceneId": "patio1"
+                }
+            ]
+        }
+
+    }
+});
+</script>
+
+</body>
+</html>
+
